@@ -35,6 +35,7 @@ function NewFriend(name, photo, answers) {
     this.photo = photo;
     this.answers = answers;
 }
+NewFriend();
 
 // Function to change formate of survey answers because they come in as strings
 function convertAnswers(currentFriend) {
@@ -59,8 +60,8 @@ function compareFriends(allFriends, currentFriend) {
     var matchScore = 0;
     var closestMatch;
 
-    for (i = 0; i < allFriends.length - 1; i++) {
-        matchFriend = allFriends[i].answers;
+    for (i = 0; i < friends.length - 1; i++) {
+        matchFriend = friends[i].answers;
         // console.log(matchFriend);
 
         // for each answer in an array...
@@ -70,14 +71,13 @@ function compareFriends(allFriends, currentFriend) {
             matchScore += qScore;
         }
         // console.log(matchScore)
-
         // push friends matchScore into an array
         matchScores.push(matchScore);
         matchScore = 0; // reset back to zero
     }
     // console.log(matchScores)
 
-    // Find lowest score in matchScores array
+    // Find lowest score
     var lowestScore = Math.min(...matchScores);
     // console.log(lowestScore);
 
@@ -85,7 +85,7 @@ function compareFriends(allFriends, currentFriend) {
     var matchIndex = matchScores.indexOf(lowestScore);
     // console.log(matchIndex);
     // find the friend at this index in the allFriends array
-    var bestFriend = allFriends[matchIndex];
+    var bestFriend = friends[matchIndex];
 
     // add a new property to the current friend's object that holds the best match
     currentFriend.bestie = bestFriend;
