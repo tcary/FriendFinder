@@ -1,5 +1,5 @@
 // Array holds data objects, a list of all friends and applicable data
-module.exports = [
+var friends = [
     {
         name: "Henry",
         photo: "https://www.askideas.com/media/10/Duck-Face-Girl-Funny-People.jpg",
@@ -67,6 +67,4 @@ module.exports = [
     }
 ];
 
-// module.exports.push2arr = function(data) {
-// 	module.exports.allFriends.push(data);
-// }
+module.exports = friends;
